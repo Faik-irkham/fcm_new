@@ -73,7 +73,7 @@ class HomePage extends StatelessWidget {
             child: ListView.separated(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
               itemCount: tasks.length,
-              separatorBuilder: (_, __) => const SizedBox(height: 14),
+              separatorBuilder: (_, _) => const SizedBox(height: 14),
               itemBuilder: (context, index) {
                 final task = tasks[index];
                 final title = task.$1;
@@ -89,7 +89,7 @@ class HomePage extends StatelessWidget {
                       BoxShadow(
                         blurRadius: 14,
                         offset: const Offset(0, 6),
-                        color: Colors.black.withOpacity(0.06),
+                        color: Colors.black.withValues(alpha: 0.06),
                       ),
                     ],
                   ),
@@ -100,7 +100,7 @@ class HomePage extends StatelessWidget {
                         height: 48,
                         width: 48,
                         decoration: BoxDecoration(
-                          color: color.withOpacity(0.15),
+                          color: color.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(14),
                         ),
                         child: Icon(
@@ -151,7 +151,7 @@ class HomePage extends StatelessWidget {
                           vertical: 6,
                         ),
                         decoration: BoxDecoration(
-                          color: color.withOpacity(0.12),
+                          color: color.withValues(alpha: 0.12),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Text(
@@ -180,7 +180,10 @@ class HomePage extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
-            BoxShadow(blurRadius: 12, color: Colors.black.withOpacity(0.2)),
+            BoxShadow(
+              blurRadius: 12,
+              color: Colors.black.withValues(alpha: 0.2),
+            ),
           ],
         ),
         child: FloatingActionButton.extended(
